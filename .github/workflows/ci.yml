@@ -30,9 +30,9 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run -d -p 3000:3000 --name test-container ci-cd:${{ github.sha }}
+          docker run -d -p 3000:3000 --name ci-cd-test-container ci-cd:${{ github.sha }}
           sleep 10
           docker ps
-          docker logs test-container
-          docker stop test-container
+          docker logs ci-cd-test-container
+          docker stop ci-cd-test-container
 
